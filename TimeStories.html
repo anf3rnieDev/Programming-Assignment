@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+      }
+
+      ul#titles-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      ul#titles-list a {
+        text-decoration: none;
+        color: #000;
+      }
+
+      .container {
+        padding: 20px;
+        background-color: gray;
+        max-width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+      }
+
+      ul#titles-list li {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>LATEST STORIES</h2>
+      <ul id="titles-list"></ul>
+    </div>
+
+    <script>
+      const data = [
+        {
+          title:
+            "Amy Schneider’s Jeopardy! Streak Ends at 40 Consecutive Wins and $1.4 Million",
+          link: "https://time.com/6142934/amy-schneider-jeopardy-streak-ends/",
+        },
+        {
+          title: "'Writing With Fire' Shines a Light on All-Women News Outlet",
+          link: "https://time.com/6142628/writing-with-fire-india-documentary/",
+        },
+        {
+          title: "Moderna Booster May Wane After 6 Months",
+          link: "https://time.com/6142852/moderna-booster-wanes-omicron/",
+        },
+        {
+          title:
+            "Pressure Mounts for Biden to Nominate a Black Woman to the Supreme",
+          link: "https://time.com/6142743/joe-biden-supreme-court-nominee-black-woman-campaign-promise/",
+        },
+        {
+          title:
+            "The James Webb Space Telescope Is in Position—And Now We Wait",
+          link: "https://time.com/6142769/james-webb-space-telescope-reaches-l2/",
+        },
+        {
+          title: "We Urgently Need a New National COVID-19 Response Plan",
+          link: "https://time.com/6142718/we-need-new-national-covid-19-response-plan/",
+        },
+      ];
+
+      function displayTitles() {
+        const titlesList = document.getElementById("titles-list");
+
+        data.forEach((item) => {
+          const listItem = document.createElement("li");
+
+          const linkElement = document.createElement("a");
+          linkElement.href = item.link;
+          linkElement.textContent = item.title;
+          linkElement.target = "_blank";
+
+          listItem.appendChild(linkElement);
+
+          titlesList.appendChild(listItem);
+        });
+      }
+
+      displayTitles();
+    </script>
+  </body>
+</html>
